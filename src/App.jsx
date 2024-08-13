@@ -1,5 +1,7 @@
 
 import React, { useState } from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
 import ProductList from './ProductList';
 import './App.css';
 import AboutUs from './AboutUs';
@@ -13,6 +15,7 @@ function App() {
   };
 
   return (
+    <provider store={store}>
     <div className="app-container">
       <div className={`landing-page ${showProductList ? 'fade-out' : ''}`}>
         <div className="background-image"></div>
@@ -36,6 +39,7 @@ function App() {
         <ProductList />
       </div>
     </div>
+    </provider>
   );
 }
 
